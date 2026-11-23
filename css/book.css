@@ -23,8 +23,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 :focus-visible { outline: 3px solid var(--gold-hi); outline-offset: 3px; }
 input { font: inherit; color: inherit; caret-color: var(--gold); }
 
-#viewport { position: fixed; inset: 0; display: grid; place-items: center; }
-#deck { position: relative; width: 1280px; height: 720px; flex: none; transform-origin: center; overflow: hidden;
+#viewport { position: fixed; inset: 0; overflow: hidden; }
+#deck { position: absolute; left: 50%; top: 50%; margin: -360px 0 0 -640px; width: 1280px; height: 720px; transform-origin: center; overflow: hidden;
   background: radial-gradient(ellipse 90% 70% at 50% 108%, #0f3a48 0%, transparent 60%), radial-gradient(ellipse 70% 50% at 50% -10%, #0c2b3a 0%, transparent 70%), linear-gradient(#04101a, #071c27 55%, #04101a); }
 #water { position: absolute; inset: 0; width: 100%; height: 100%; }
 #deck::after { content: ""; position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 0 180px 40px rgba(0, 4, 8, .75); z-index: 40; }
