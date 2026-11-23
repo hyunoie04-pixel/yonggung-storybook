@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>상자에 남은 질문 · 용궁부연록</title>
+<link rel="stylesheet" href="css/book.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="ink-rough" x="-6%" y="-6%" width="112%" height="112%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035 0.06" numOctaves="3" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="ink-wash" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.02 0.03" numOctaves="3" seed="8" result="n"/>
+      <feDisplacementMap in="b" in2="n" scale="16" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <!-- 먹글씨(밝은 바탕의 검은 글씨)를 바탕 없는 진주빛 글씨로 바꾼다 -->
+    <filter id="ink-alpha" x="-5%" y="-10%" width="110%" height="120%" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="0 0 0 0 0.95  0 0 0 0 0.97  0 0 0 0 0.95  -0.897 -1.761 -0.342 0 1.5" result="raw"/>
+      <feComposite in="raw" in2="SourceAlpha" operator="in" result="ink"/>
+      <feGaussianBlur in="ink" stdDeviation="9" result="g"/>
+      <feColorMatrix in="g" type="matrix" values="0 0 0 0 0.43  0 0 0 0 0.76  0 0 0 0 0.7  0 0 0 0.75 0" result="glow"/>
+      <feMerge><feMergeNode in="glow"/><feMergeNode in="ink"/></feMerge>
+    </filter>
+  </defs>
+</svg>
+<div id="viewport">
+  <div id="deck">
+    <canvas id="water" width="1280" height="720" aria-hidden="true"></canvas>
+    <main id="pages"></main>
+    <div id="folio" aria-hidden="true"><b id="ps-no"></b><span id="ps-title"></span></div>
+    <nav id="bar" aria-label="쪽 넘기기">
+      <button id="prev" class="bar-btn" type="button">이전</button>
+      <ol id="dots"></ol>
+      <button id="next" class="bar-btn" type="button">다음</button>
+      <button id="fs" class="bar-btn quiet" type="button">전체 화면</button>
+    </nav>
+    <div id="toast" role="status"></div>
+  </div>
+</div>
+<script src="js/data.js"></script>
+<script src="js/art.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
