@@ -114,7 +114,7 @@ input { font: inherit; color: inherit; caret-color: var(--gold); }
 /* ---------- 3 도구 ---------- */
 .tools .h2 { position: absolute; left: 96px; top: 70px; }
 .tl-rows { position: absolute; left: 96px; top: 178px; width: 1088px; list-style: none; }
-.tl-rows li { display: grid; grid-template-columns: 270px 300px 1fr; align-items: baseline; padding: 16px 0 14px; border-bottom: 1px solid rgba(169, 189, 185, .25); }
+.tl-rows li { display: grid; grid-template-columns: 236px 316px 1fr; align-items: baseline; padding: 16px 0 14px; border-bottom: 1px solid rgba(169, 189, 185, .25); }
 .tl-rows .nm { font-size: 38px; font-weight: 900; }
 .tl-rows .tn { font-family: var(--sans); font-size: 21px; font-weight: 700; color: var(--gold); }
 .tl-rows .why { font-size: 25px; line-height: 1.5; }
